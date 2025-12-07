@@ -93,17 +93,15 @@ Copilot will answer accurately because it reads this file.
 **What it does**: Creates a specialized Copilot agent for this project.
 
 **Technical details**:
-- Access via the **agent dropdown menu** in Copilot Chat (click the dropdown where you see "Ask", "Edit", "Agent" modes)
-- Select **"flight-delay-assistant"** from the list
+- Access via the **agent dropdown menu** in Copilot Chat
 - Knows: dataset structure, project goals, tech stack, file locations
 - Provides project-specific answers vs generic advice
 
 **How to use**:
 1. Open Copilot Chat (`Ctrl+Shift+I`)
 2. Click the **dropdown menu** at the top (shows "Ask" or "Edit" mode)
-3. Select **"Agent"** mode
-4. Choose **"flight-delay-assistant"** from the agent list
-5. Ask your question!
+3. Choose **"flight-delay-assistant"** from the agent list
+4. Ask your question!
 
 **Try it**:
 ```
@@ -113,6 +111,16 @@ Select flight-delay-assistant agent, then ask:
 Answer: "The target is ArrDel15, a binary column where 1 = delayed >15 min"
 (vs generic: "For classification, you need a target variable...")
 ```
+
+> 💡 **Tip: Enable `@` prefix for agents**
+> 
+> Want to type `@flight-delay-assistant` directly in chat? Enable this setting:
+> 1. Open Settings (`Ctrl+,`)
+> 2. Search for: `chat.customAgentInSubagent`
+> 3. Enable **"Chat › Custom Agent In Subagent"**
+> 4. Restart VS Code
+> 
+> Now you can type `@flight-delay-assistant` alongside `@workspace`, `@terminal`, etc.!
 
 ---
 

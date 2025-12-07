@@ -48,11 +48,9 @@ Before starting, ensure you have:
 Open a terminal and run:
 
 ```bash
-git clone https://github.com/YOUR-ORG/flight-delay-hackathon.git
-cd flight-delay-hackathon
+git clone https://github.com/gitpavleenbali/flight-delay-hackathon_exercise.git
+cd flight-delay-hackathon_exercise
 ```
-
-> 💡 Replace `YOUR-ORG` with the actual organization name provided by your mentor.
 
 ---
 

@@ -93,13 +93,22 @@ Copilot will answer accurately because it reads this file.
 **What it does**: Creates a specialized Copilot agent for this project.
 
 **Technical details**:
-- Invoke with `@flight-delay-assistant` followed by your question
+- Access via the **agent dropdown menu** in Copilot Chat (click the dropdown where you see "Ask", "Edit", "Agent" modes)
+- Select **"flight-delay-assistant"** from the list
 - Knows: dataset structure, project goals, tech stack, file locations
 - Provides project-specific answers vs generic advice
 
+**How to use**:
+1. Open Copilot Chat (`Ctrl+Shift+I`)
+2. Click the **dropdown menu** at the top (shows "Ask" or "Edit" mode)
+3. Select **"Agent"** mode
+4. Choose **"flight-delay-assistant"** from the agent list
+5. Ask your question!
+
 **Try it**:
 ```
-Type: @flight-delay-assistant What's the target variable for my model?
+Select flight-delay-assistant agent, then ask:
+"What's the target variable for my model?"
 
 Answer: "The target is ArrDel15, a binary column where 1 = delayed >15 min"
 (vs generic: "For classification, you need a target variable...")

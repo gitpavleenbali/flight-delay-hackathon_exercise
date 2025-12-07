@@ -1,0 +1,28 @@
+{
+    "tools": {
+        "read_file": {
+            "enabled": true,
+            "description": "Allow Copilot to read files in the workspace"
+        },
+        "write_file": {
+            "enabled": true,
+            "description": "Allow Copilot to create and edit files"
+        },
+        "run_terminal": {
+            "enabled": true,
+            "description": "Allow Copilot to run terminal commands"
+        },
+        "run_notebook_cell": {
+            "enabled": true,
+            "description": "Allow Copilot to execute Jupyter notebook cells"
+        },
+        "semantic_search": {
+            "enabled": true,
+            "description": "Allow Copilot to search codebase semantically"
+        },
+        "grep_search": {
+            "enabled": true,
+            "description": "Allow Copilot to search with grep/regex"
+        }
+    }
+}

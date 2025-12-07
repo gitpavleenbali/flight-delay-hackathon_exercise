@@ -1,38 +1,64 @@
-# Flight Delay Hackathon
-<!-- REPLACE THE TITLE WITH THE NAME OF THE EXERCISE -->
+# ✈️ Flight Delay Prediction Hackathon
 
-This repository includes a Copilot hackathon intended to give you practical experience using the tool.
+Build a machine learning-powered web application that predicts flight delays using GitHub Copilot as your AI pair programmer.
 
-## 🎯 Goal
-<!-- ONE SENTENCE ABOUT THE GOAL OF THE EXERCISE -->
-Build an application which will allow someone to select the day of the week and arrival airport to see the chance their flight will be delayed by more than 15 minutes.
+## 🎯 What You'll Build
 
-## ✍️ Programming Languages
-<!-- BULLETED LIST OF LANGUAGES INVOLVES -->
-- TypeScript / JavaScript
-- Python
+An end-to-end application where users can:
+- Select a day of the week and destination airport
+- Get the probability of their flight being delayed by more than 15 minutes
+- See color-coded risk levels in a modern web interface
 
-## 💻 IDE
-<!-- OPTIONALLY SPECIFY THE IDEs THAT SHOULD BE USED -->
-- Visual Studio
-- Visual Studio Code
-- JetBrains IDEs
+## 🛠️ Tech Stack
 
-## 🗒️ Guide
-<!-- STEP BY STEP INSTRUCTIONS DETAILING HOW TO COMPLETE THE EXERCISE -->
-[GitHub Copilot](https://github.com/features/copilot) is your AI pair programmer, built to support you throughout your development experience. As with any new tool, using GitHub Copilot requires learning a few new skills. This project is built to do exactly that, to give you an opportunity to build a project, using the language and tools you typically use, with GitHub Copilot.
+| Layer | Technology |
+|-------|------------|
+| **Data Science** | Python, Pandas, Scikit-learn |
+| **Backend** | Flask REST API |
+| **Frontend** | HTML, CSS, JavaScript |
+| **AI Pair Programmer** | GitHub Copilot |
 
-> **[Start hacking!](./hackathon.md)**
+## 📋 Prerequisites
 
-## Requirements
+- **Visual Studio Code** with the following extensions:
+  - GitHub Copilot (required)
+  - Python Extension
+  - Jupyter Extension
+- **Python 3.9+** with pip
+- **Git** for cloning the repository
 
-This project is configured with a [devcontainer](./.devcontainer/devcontainer.json), which can be [run locally](https://code.visualstudio.com/docs/devcontainers/containers) or in a [codespace](https://github.com/features/codespaces). Please refer to the [setup exercise](./content/0-get-started.md) for more information.
+## 📊 Dataset
 
-The project does assume you are familiar with programming, but is not prescriptive about language or framework choice.
+The `data/flights.csv` contains 271,000+ FAA flight records from 2013 with delay information, carrier codes, and airport details. Perfect for binary classification.
 
-## 🤝 Contributing
-Contributions are warmly welcomed! ✨
+## 📖 Hackathon Structure
 
-To contribute to a public exercise, please refer to our contribution guidelines [here](https://github.com/ps-copilot-sandbox/.github/blob/main/.github/CONTRIBUTING.md).
+| Chapter | Focus | Skills |
+|---------|-------|--------|
+| 0. Setup | Environment & Copilot | Configuration |
+| 1. ML Model | Data exploration & training | Jupyter, Copilot Chat |
+| 2. REST API | Flask endpoints | Backend development |
+| 3. Frontend | Web interface | HTML/CSS/JS |
 
-To create a net new exercise, please use [this repository template](https://github.com/ps-copilot-sandbox/copilot-exercise-template).
+## ⏱️ Time Estimate
+
+**2-4 hours** depending on your experience level.
+
+---
+
+## 🚀 Ready to Start?
+
+```bash
+# 1. Clone the repository
+git clone <your-repo-url>
+cd flight-delay-hackathon
+
+# 2. Open in VS Code
+code .
+```
+
+> ### **[🚀 Start your journey! →](./hackathon.md)**
+
+---
+
+*Happy hacking! May your flights be on time! ✈️*

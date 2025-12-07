@@ -1,46 +1,243 @@
-# Working with a dataset and machine learning
+# 🔍 Chapter 1: Decode the Data
 
-The scenario for this workshop revolves around a [dataset from the FAA](../data/flights.csv) which contains core information about flights in the US in 2013.
-It contains the carrier, the date and time the flights took off and arrived (and their origin and destination), and information about delays including both
-the time and a flag if it was more than 15 minutes. For this scenario you will explore and cleanse the data, build and export a model trained to show the percent chance
-a flight will be delayed for a day of the week and an airport, and create a new CSV file containing the list of all airports and their associated IDs in the dataset.
+> *"Within the data vault lie 271,000 stories. Each flight a journey, each delay a pattern waiting to be discovered..."*
 
-> **NOTE:** The CSV file is in the [data](../data/) folder, and is named **flights.csv**.
+---
 
-## Defining success
+## 🎯 Your Mission
 
-You will have successfully completed this challenge after:
+The FAA has entrusted you with their flight records. Your quest: **find the patterns** that predict delays and train an **Oracle** (machine learning model) to share this wisdom.
 
-- cleansing the data by identifying null values and replacing them with an appropriate value (zero in this case).
-- creating a model which provides the chances a flight will be delayed by more than 15 minutes for a given day and airport pair.
-- saving the model to a file for use in an external application.
-- creating a new file with the names and associated ids from the dataset of all airports.
+```mermaid
+flowchart LR
+    CSV[flights.csv] --> YOU[Your Notebook]
+    YOU --> MODEL[model.pkl]
+    YOU --> AIRPORTS[airports.csv]
+    
+    style CSV fill:#1e40af,color:#fff,stroke:#1e3a8a,stroke-width:2px
+    style YOU fill:#7c3aed,color:#fff,stroke:#5b21b6,stroke-width:2px
+    style MODEL fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+    style AIRPORTS fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+```
 
-## Tips
+---
 
-If you're new to data science and machine learning, the first step when working with a new dataset is to explore the data.
-You'll typically start by loading the data into memory, displaying a portion of it to gain an understanding about how the data is structured,
-and looking for any issues which need to be cleaned up. (There are always issues which need to be cleaned up.) As these are common tasks, you'll find GitHub Copilot will be able to provide a fair amount of support.
+## 📜 The Quest
 
-Two popular libraries for these types of tasks are [pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html) and [scikit-learn](https://scikit-learn.org/stable/),
-with [Jupyter notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) being the most common tool used to perform these tasks.
-Fortunately, Visual Studio Code natively supports Jupyter notebooks, so you won't need to install any additional tooling.
+### 🏆 Success Criteria
 
-### Jump start
+You will complete this chapter when you have:
 
-To get started with this challenge:
+| Task | Reward |
+|------|--------|
+| ✅ Explored the dataset and understood its structure | *Knowledge of the data* |
+| ✅ Cleaned the data (filled null values with 0) | *Pure, usable data* |
+| ✅ Trained a model to predict flight delays | *🔮 The Oracle (model.pkl)* |
+| ✅ Exported the airport list with IDs | *📋 The Index (airports.csv)* |
 
-1. Inside of your codespace, in the root of the project, create a new notebook named **manage-flight-data.ipynb**.
-2. In the first cell, add a comment describing what you're looking to do.
-3. Start by displaying the data to get a sense for the values included.
-4. If you're not sure of what to do, start by asking GitHub Copilot in the form of a comment.
+---
 
-## Sparking imagination
+### 📂 First: Create the Server Folder
 
-There's quite a bit of data in this dataset, and numerous directions you could go with it. You could explore delay information by airline,
-which routes are most likely to be delayed, or what city has the best on-time performance. While the workshop is centered on the one scenario,
-if you're comfortable with data science and machine learning, you can take some extra time here to play with other aspects of the data.
+Before you begin, create the folder where you'll export your model:
 
-## Next steps
+```bash
+mkdir server
+```
 
-This first scenario is designed to provide a sense of how to work with GitHub Copilot and how to interact with it. You'll likely have seen it was able to suggest libraries to use and the tasks necessary to complete a given scenario. With the data setup, let's turn our attention to [creating the API](./2-create-api.md).
+Or right-click in VS Code Explorer → New Folder → name it `server`
+
+---
+
+### 📓 Your Notebook Structure
+
+Create `manage-flight-data.ipynb` in the root folder. Here's the cell structure to follow:
+
+| Cell # | Type | Purpose | What to Do |
+|--------|------|---------|------------|
+| 1 | Markdown | Title | "# Flight Delay Prediction Model" |
+| 2 | Code | Imports | Import pandas, numpy, sklearn, pickle |
+| 3 | Code | Load Data | `pd.read_csv('data/flights.csv')` |
+| 4 | Markdown | Section | "## Data Exploration" |
+| 5 | Code | Check Nulls | `df.isnull().sum()` |
+| 6 | Markdown | Section | "## Data Cleaning" |
+| 7 | Code | Clean Data | Fill nulls, remove outliers |
+| 8 | Markdown | Section | "## Train Model" |
+| 9 | Code | ML Pipeline | Train/test split, LogisticRegression |
+| 10 | Code | Evaluate | Accuracy, confusion matrix |
+| 11 | Markdown | Section | "## Export Artifacts" |
+| 12 | Code | Export | Save model.pkl and airports.csv |
+
+---
+
+### ⚔️ Part 1: Enter the Data Vault
+
+Create a Jupyter notebook to explore the data:
+
+1. In the root of your project, create a new file: `manage-flight-data.ipynb`
+2. The dataset is at `data/flights.csv`
+
+**🧪 Try the Scroll of Analysis:**
+```
+Open Copilot Chat and type: #explore-data or /explore-data
+Watch as it generates exploration code!
+```
+
+**Things to discover:**
+- How many rows and columns?
+- What do the columns mean?
+- Are there null values?
+- What's the overall delay rate?
+
+---
+
+### ⚔️ Part 2: Cleanse the Data
+
+The data has impurities (null values). You must cleanse it before the Oracle can learn.
+
+**Your task:**
+- Find columns with null values
+- Fill null values in `DepDel15` with 0
+- Remove outliers if needed
+
+**💡 Hint:** Ask Copilot: *"Help me find and fill null values in this dataset"*
+
+---
+
+### ⚔️ Part 3: Train the Oracle
+
+Create a machine learning model that predicts flight delays.
+
+**🧪 Try the Scroll of Creation:**
+```
+Open Copilot Chat and type: #build-model
+Follow its guidance to build your ML pipeline!
+```
+
+**The Oracle should:**
+- Use `DayOfWeek` and `DestAirportID` as features
+- Predict `ArrDel15` (1 = delayed >15 min, 0 = on time)
+- Use Logistic Regression (recommended)
+
+---
+
+### ⚔️ Part 4: Export Your Creations
+
+Save your Oracle and Index for the next chapter:
+
+| Artifact | Location | Purpose |
+|----------|----------|---------|
+| 🔮 `model.pkl` | `server/model.pkl` | The trained Oracle |
+| 📋 `airports.csv` | `server/airports.csv` | Airport ID to name mapping |
+
+**💡 Hint:** Use `pickle` or `joblib` to save the model
+
+---
+
+## 🗝️ Power-Ups to Use
+
+| Artifact | Incantation | How It Helps |
+|----------|-------------|--------------|
+| 📊 Scroll of Analysis | `#explore-data` | Generates data exploration code |
+| 🤖 Scroll of Creation | `#build-model` | Guides ML model creation |
+| 🛫 Expert Spirit | `@flight-delay-assistant` | Answers project questions |
+
+---
+
+## 💡 Ancient Wisdom
+
+<details>
+<summary>📜 <b>Wisdom #1:</b> How to explore data</summary>
+
+Start with these common steps:
+```python
+import pandas as pd
+
+# Load the data
+df = pd.read_csv('data/flights.csv')
+
+# See the shape
+print(df.shape)
+
+# See first rows
+df.head(10)
+
+# Check for nulls
+df.isnull().sum()
+```
+
+</details>
+
+<details>
+<summary>📜 <b>Wisdom #2:</b> Choosing features</summary>
+
+For this quest, use:
+- **Features (X)**: `DayOfWeek`, `DestAirportID`
+- **Target (y)**: `ArrDel15`
+
+These are the inputs and output for your Oracle!
+
+</details>
+
+<details>
+<summary>📜 <b>Wisdom #3:</b> Saving the model</summary>
+
+```python
+import pickle
+
+# Save the model
+with open('server/model.pkl', 'wb') as f:
+    pickle.dump(model, f)
+```
+
+</details>
+
+---
+
+## ✅ Chapter Complete!
+
+When you have these artifacts, you've completed the chapter:
+
+```mermaid
+flowchart LR
+    A[model.pkl] --> NEXT[Chapter 2: API]
+    B[airports.csv] --> NEXT
+    
+    style A fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+    style B fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+    style NEXT fill:#d97706,color:#fff,stroke:#b45309,stroke-width:2px
+```
+
+**Checklist:**
+- [ ] Created `server/` folder
+- [ ] Created `manage-flight-data.ipynb` notebook
+- [ ] Explored and understood the dataset
+- [ ] Cleaned null values (filled with 0)
+- [ ] Removed outliers (90th percentile)
+- [ ] Trained a Logistic Regression model
+- [ ] Saved `model.pkl` to `server/`
+- [ ] Created `airports.csv` in `server/`
+
+---
+
+## ➡️ Next Chapter
+
+You've trained the Oracle. Now it's time to build a bridge so others can consult it...
+
+> ### [🌉 Begin Chapter 2: Build the Bridge →](./2-create-api.md)
+
+---
+
+<details>
+<summary>💡 <b>Stuck?</b> Here's help</summary>
+
+**Don't know where to start?**
+- Type `#explore-data` in Copilot Chat
+- Ask `@flight-delay-assistant What should I do first?`
+
+**Model not training?**
+- Check that you removed null values
+- Make sure X and y are correctly defined
+- Try `#build-model` for guidance
+
+</details>

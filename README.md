@@ -48,15 +48,6 @@ The `data/flights.csv` contains 271,000+ FAA flight records from 2013 with delay
 
 ## 🚀 Ready to Start?
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/gitpavleenbali/flight-delay-hackathon_exercise.git
-cd flight-delay-hackathon_exercise
-
-# 2. Open in VS Code
-code .
-```
-
 > ### **[🚀 Start your journey! →](./hackathon.md)**
 
 ---

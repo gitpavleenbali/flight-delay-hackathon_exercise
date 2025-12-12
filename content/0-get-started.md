@@ -28,6 +28,103 @@ By the end of this chapter, you'll have:
 
 ---
 
+## 🚀 Choose Your Setup Path
+
+You have **two options** to get started. Pick the one that works best for you:
+
+```mermaid
+flowchart TB
+    START[Choose Your Path] --> A
+    START --> B
+    
+    subgraph OPTION1[⭐ OPTION 1: GitHub Codespaces]
+        A[One-Click Setup<br/>Zero Installation<br/>Works in Browser!]
+    end
+    
+    subgraph OPTION2[OPTION 2: Local VS Code]
+        B[Full Local Setup<br/>Requires Installation<br/>Works Offline]
+    end
+    
+    A --> READY[Ready to Code!]
+    B --> READY
+    
+    style START fill:#7c3aed,color:#fff,stroke:#5b21b6,stroke-width:2px
+    style OPTION1 fill:#059669,color:#fff,stroke:#047857,stroke-width:3px
+    style OPTION2 fill:#1e40af,color:#fff,stroke:#1e3a8a,stroke-width:2px
+    style A fill:#10b981,color:#fff,stroke:#059669,stroke-width:2px
+    style B fill:#3b82f6,color:#fff,stroke:#2563eb,stroke-width:2px
+    style READY fill:#059669,color:#fff,stroke:#047857,stroke-width:2px
+```
+
+| Option | Best For | Time to Start |
+|--------|----------|---------------|
+| **⭐ Option 1: Codespaces** | Managers, non-technical stakeholders, quick start | **~2 minutes** |
+| **Option 2: Local VS Code** | Developers who prefer local setup | ~15 minutes |
+
+---
+
+# ⭐ OPTION 1: GitHub Codespaces (Recommended)
+
+## 🌟 Zero Setup — Start Coding Instantly!
+
+> **Perfect for:** Managers, business stakeholders, anyone who wants to jump straight into coding without installing anything!
+
+GitHub Codespaces gives you a **complete development environment in your browser** — no installation required!
+
+### Why Codespaces?
+
+| Benefit | Description |
+|---------|-------------|
+| ✅ **No installation** | Everything runs in the cloud |
+| ✅ **Works anywhere** | Just need a browser |
+| ✅ **Pre-configured** | Python, extensions, all ready to go |
+| ✅ **Copilot included** | Already installed and activated |
+| ✅ **Same experience** | Identical to VS Code desktop |
+
+---
+
+### 🚀 Start Codespaces in 3 Clicks
+
+#### Step 1: Open the Repository
+
+Go to: **[github.com/gitpavleenbali/flight-delay-hackathon_exercise](https://github.com/gitpavleenbali/flight-delay-hackathon_exercise)**
+
+#### Step 2: Launch Codespace
+
+Click the green **"<> Code"** button → Select **"Codespaces"** tab → Click **"Create codespace on main"**
+
+![How to Launch GitHub Codespaces](../images/codespaces.jpg)
+
+#### Step 3: Wait ~2 Minutes
+
+Codespaces will:
+- Create your cloud environment
+- Install Python and all dependencies
+- Set up GitHub Copilot
+- Open VS Code in your browser
+
+**That's it! You're ready to code! 🎉**
+
+---
+
+### ✅ Verify Codespaces is Working
+
+1. Open Copilot Chat: Press `Ctrl+Shift+I` (or `Cmd+Shift+I` on Mac)
+2. Ask: *"What columns are in flights.csv?"*
+3. If Copilot responds with column info, **you're all set!**
+
+> ### [👉 Skip to "Discover the Power-Ups" section](#-discover-the-power-ups)
+
+---
+
+# OPTION 2: Local VS Code Setup
+
+## 🖥️ Full Local Installation
+
+> **For:** Developers who prefer working locally with full control over their environment
+
+---
+
 ## 📋 Prerequisites
 
 Before starting, ensure you have:
@@ -41,9 +138,9 @@ Before starting, ensure you have:
 
 ---
 
-## 🛠️ Step-by-Step Setup
+## 🛠️ Step-by-Step Local Setup
 
-### Step 1: Clone the Repository
+### Local Step 1: Clone the Repository
 
 Open a terminal and run:
 
@@ -54,7 +151,7 @@ cd flight-delay-hackathon_exercise
 
 ---
 
-### Step 2: Open in VS Code
+### Local Step 2: Open in VS Code
 
 ```bash
 code .
@@ -64,7 +161,7 @@ Or: Open VS Code → File → Open Folder → Select the cloned folder
 
 ---
 
-### Step 3: Install GitHub Copilot Extension
+### Local Step 3: Install GitHub Copilot Extension
 
 1. Click the **Extensions** icon in VS Code sidebar (or press `Ctrl+Shift+X`)
 2. Search for **"GitHub Copilot"**
@@ -88,7 +185,7 @@ flowchart LR
 
 ---
 
-### Step 4: Set Up Python Environment
+### Local Step 4: Set Up Python Environment
 
 Open a terminal in VS Code (`Ctrl+`` `) and run:
 
@@ -108,7 +205,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn flask flask-cors jupyte
 
 ---
 
-### Step 5: Verify Copilot is Working
+### Local Step 5: Verify Copilot is Working
 
 1. Create a new file: `test.py`
 2. Type this comment:
@@ -133,7 +230,7 @@ flowchart LR
 
 ---
 
-### Step 6: Open Copilot Chat
+### Local Step 6: Open Copilot Chat
 
 Press `Ctrl+Shift+I` (Windows) or `Cmd+Shift+I` (Mac) to open Copilot Chat.
 

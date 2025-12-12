@@ -230,6 +230,16 @@ Then open `http://localhost:8080`
 
 When a traveler can select a day and airport, click a button, and see their delay prediction...
 
+### 🎯 The Real Treasure
+
+This is what your completed Flight Delay Predictor will look like:
+
+![Flight Delay Predictor - The Real Treasure](../images/flight-delay-predictor.png)
+
+*A beautiful, working prediction app that tells travelers their flight delay risk!*
+
+---
+
 **Final Checklist:**
 - [ ] Created `client/` folder
 - [ ] Created `client/index.html`

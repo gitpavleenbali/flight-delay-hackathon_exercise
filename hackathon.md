@@ -215,6 +215,16 @@ flowchart LR
 
 ---
 
+## 🏆 The Real Treasure
+
+When you complete all chapters, this is what you'll build:
+
+![Flight Delay Predictor - The Real Treasure](./images/flight-delay-predictor.png)
+
+*A fully working Flight Delay Predictor app — your treasure awaits!*
+
+---
+
 ## 🏁 Ready to Start?
 
 > ### [👉 Begin Chapter 0: Setup Your Environment](./content/0-get-started.md)
